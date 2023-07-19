@@ -97,7 +97,7 @@ DATABASES = {
         # 'PASSWORD': '',
         # 'HOST': 'localhost',
 
-        'ENGINE': 'django.db.backends.postgres',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
         'PASSWORD': 'opbD9xaeQPIxo5LlpWeh',
