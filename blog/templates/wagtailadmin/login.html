@@ -1,0 +1,13 @@
+{% extends "wagtailadmin/login.html" %}
+{% load static %}
+
+{% block branding_login %}
+    Sign in to Frank's Site
+{% endblock %}
+
+{% block branding_logo %}
+    <div class="login-logo">
+        <img class="login-logo-img" src="{% static 'images/logo.png' %}" alt="Custom Project">
+    </div>
+<!--    <img src="{% static 'images/logo.png' %}" alt="Custom Project" width="80" />-->
+{% endblock %}
