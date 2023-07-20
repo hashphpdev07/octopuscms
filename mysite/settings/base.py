@@ -101,7 +101,7 @@ DATABASES = {
         'NAME': 'railway',
         'USER': 'postgres',
         'PASSWORD': 'opbD9xaeQPIxo5LlpWeh',
-        'PORT':'6824',
+        'PORT': '6824',
         'HOST': 'containers-us-west-63.railway.app',
     }
 }
@@ -151,6 +151,9 @@ STATICFILES_FINDERS = [
 STATICFILES_DIRS = [
     os.path.join(PROJECT_DIR, "static"),
 ]
+
+import tempfile
+FILE_UPLOAD_TEMP_DIR = tempfile.mkdtemp()
 
 # ManifestStaticFilesStorage is recommended in production, to prevent outdated
 # JavaScript / CSS assets being served from cache (e.g. after a Wagtail upgrade).
