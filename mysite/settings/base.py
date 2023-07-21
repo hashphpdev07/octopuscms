@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "wagtail.api.v2",
     "rest_framework",
-    "cmsblog"
+    "cmsblog",
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -164,8 +165,19 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_URL = "/media/"
+# MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+# MEDIA_URL = "/media/"
+
+
+# S3 Bucket Access
+
+AWS_STORAGE_BUCKET_NAME = 'octopuscms'
+AWS_ACCESS_KEY_ID = 'AKIA2KGU7U3GITCJ3U7T'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 # Wagtail settings
